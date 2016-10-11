@@ -1,0 +1,15 @@
+{
+  "name": "js-study",
+  "version": "0.0.1",
+  "description": "Let's study JavaScript!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "browser-sync start --server --files '*.html,**/*.js'"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.17.2"
+  }
+}

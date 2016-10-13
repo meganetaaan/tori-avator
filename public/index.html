@@ -8,11 +8,23 @@
   <body>
     <!-- Write HTML here -->
 
-    <div class="click-me">click me!!</div>
-    <script src="js/main.js"></script>
-    <!-- DON'T TOUCH BELOW -->
-    <script id="__bs_script__">//<![CDATA[
-      document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.17.2'><\/script>".replace("HOST", location.hostname));
-      //]]></script>
-  </body>
+    <div id="root"></div>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA1NzKNBdRpOIwuBmn2TYqnYblROJEy0Ek",
+      authDomain: "tori-gocco.firebaseapp.com",
+      databaseURL: "https://tori-gocco.firebaseio.com",
+      storageBucket: "",
+      messagingSenderId: "450877141028"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="js/main.js"></script>
+  <!-- DON'T TOUCH BELOW -->
+  <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.17.2'><\/script>".replace("HOST", location.hostname));
+    //]]></script>
+</body>
 </html>

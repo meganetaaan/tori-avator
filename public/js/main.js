@@ -55,6 +55,10 @@
     elem.appendChild(text);
     elem.style.position = 'absolute';
     elem.className = 'avator';
+    elem.setAttribute('data-user-name', userName);
+    elem.addEventListener('click', function() {
+      USER_NAME = userName;
+    });
     document.getElementById('root').appendChild(elem);
     userCache[userName] = elem;
     return elem;
@@ -66,9 +70,21 @@
     elem.style.top = y + 'px';
   }
 
+  function removeAvator(userName) {
+    var elem = userCache[userName];
+    if(elem) {
+      elem.parentNode.removeChild(elem);
+      userCache[userName] = null;
+    }
+  }
   db.ref('users/').on('child_changed', function(child) {
     var user = child.val();
     updateAvator(user.userName, user.x, user.y);
+  });
+
+  db.ref('users/').on('child_removed', function(child) {
+    var user = child.val();
+    removeAvator(user.userName);
   });
 
   var USER_NAME = 'bobin';
